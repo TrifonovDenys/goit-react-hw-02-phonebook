@@ -1,6 +1,7 @@
 import React from "react";
 import { nanoid } from 'nanoid'
 import css from './ContactList.module.css'
+import PropTypes from "prop-types";
 const ContactList = ({ contacts, deleteContact }) => {
   return (
     <ul className={css.list}>
@@ -20,3 +21,9 @@ const ContactList = ({ contacts, deleteContact }) => {
 };
 
 export default ContactList;
+
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  deleteContact: PropTypes.func.isRequired,
+}
